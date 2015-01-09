@@ -11,7 +11,7 @@ student = {
 }
 ruby = {
 	name => "Ruby",
-	willpower = 8,
+	willpower => 8,
 	damage => 2,
 	hit_chance => 70,
 	attack => "A rail",
@@ -31,6 +31,6 @@ css = {
 	attack => "float",
 }
  enemies = [ruby, js, css]
- 
+
 puts "Hi #{name}! Let's start battling!"
 puts "You have 10 health points"
