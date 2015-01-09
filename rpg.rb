@@ -6,7 +6,7 @@ student = {
 	"willpower" => 10,
 	"damage" => 4,
 	"hit_chance" => 95,
-	"run_chance" => 90,
+	"run_chance" => 60,
 	"enemies_defeated"=> 0,
 }
 ruby = {
