@@ -86,7 +86,7 @@ while student["willpower"] > 0
 	  		run = Random.rand(1...100)
 	  		if run > student["run_chance"]
 	  			p "Could not run, you need to code"
-	  			fight(current)
+	  			fight(current,student)
 	  		end
 
 	  	elsif(answer == "n")
