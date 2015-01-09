@@ -30,7 +30,14 @@ css = {
 	"hit_chance" => 100,
 	"attack" => "a float",
 }
-enemies = [ruby, js, css]
+html = {
+	"name" => "HTML",
+	"willpower" => 8,
+	"damage" => 5,
+	"hit_chance" => 60,
+	"attack" => "a div",
+}
+enemies = [ruby, js, css, html]
 
 def fight(curr,student)
 	p "fight"
@@ -61,6 +68,7 @@ against GA course material"
 
 while student["willpower"] > 0
 	ran_en = Random.rand(0...enemies.length)
+
 	current = enemies[ran_en].dup
 	p "You encouneter a wild #{current["name"]}"
 	corr_ans = true
