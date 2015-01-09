@@ -14,21 +14,21 @@ ruby = {
 	"willpower" => 8,
 	"damage" => 2,
 	"hit_chance" => 70,
-	"attack" => "A rail",
+	"attack" => "a rail",
 }
 js = {
 	"name" => "Javascript",
 	"willpower" => 10,
 	"damage" => 1,
 	"hit_chance" => 90,
-	"attack" => "Async",
+	"attack" => "async",
 }
 css = {
 	"name" => "CSS",
 	"willpower" => 4,
 	"damage" => 6,
 	"hit_chance" => 100,
-	"attack" => "float",
+	"attack" => "a float",
 }
 html = {
 	"name" => "HTML",
@@ -68,25 +68,26 @@ against GA course material"
 
 while student["willpower"] > 0
 	ran_en = Random.rand(0...enemies.length)
-	current = enemies[ran_en]
+
+	current = enemies[ran_en].dup
 	p "You encouneter a wild #{current["name"]}"
 	corr_ans = true
 	while corr_ans
-		p "Do you want to run? (y/n)"
-		answer = gets.chomp
-		if(answer == "y")
-			corr_ans = false
-			student["willpower"] -= 2
-			p "You now have #{student["willpower"]} health left."
-			run = Random.rand(1...100)
-			if run > student["run_chance"]
-				p "Could not run, you need to code"
-				fight(current)
-			end
+	  	p "Do you want to run? (y/n)"
+	  	answer = gets.chomp
+	  	if(answer == "y")
+	  		corr_ans = false
+	  		student["willpower"] -= 2
+	  		p "You now have #{student["willpower"]} health left."
+	  		run = Random.rand(1...100)
+	  		if run > student["run_chance"]
+	  			p "Could not run, you need to code"
+	  			fight(current)
+	  		end
 
-		elsif(answer == "n")
-			corr_ans = false
-			fight(current,student)
-		end
+	  	elsif(answer == "n")
+	  		corr_ans = false
+	  		fight(current,student)
+	  	end
 	end
 end
