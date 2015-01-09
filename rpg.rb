@@ -61,12 +61,16 @@ def fight(curr,student)
 			end
 		end
 	end
+	if curr["willpower"] <= 0
+		student["enemies_defeated"] += 1
+	end
 end
 puts "Hi #{name}! Let's start coding!"
 puts "You have a willpower rating of 10, lets see how you fair
 against GA course material"
 
 while student["willpower"] > 0
+	puts "Your have #{student["willpower"]} willpower left"
 	ran_en = Random.rand(0...enemies.length)
 
 	current = enemies[ran_en].dup
@@ -91,3 +95,7 @@ while student["willpower"] > 0
 	  	end
 	end
 end
+
+puts "You were defeated by the rigurous course material"
+puts "You defeated #{student["enemies_defeated"]}"
+puts "Congrats!"
