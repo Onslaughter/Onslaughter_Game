@@ -40,24 +40,24 @@ html = {
 enemies = [ruby, js, css, html]
 
 def fight(curr,student)
-	p "fight"
+	p "Begin the battle"
 	while (curr["willpower"] > 0 && student["willpower"] > 0)
 		p "Attack"
 		hit = Random.rand(1...100)
 		if hit > student["hit_chance"]
 			p "You missed"
 		else
-			p "You hit for #{student["damage"]}"
+			p "You hit #{curr["name"]} for #{student["damage"]} damages!"
 			curr["willpower"] -= student["damage"]
 		end
 		p curr["willpower"]
 		if curr["willpower"] > 0
 			roll =  Random.rand(1...100)
 			if roll < curr["hit_chance"]
-				p "Hit you with #{curr["attack"]} and does #{curr["damage"]}"
+				p "#{curr["name"]} Hit you with #{curr["attack"]} and does #{curr["damage"]} damages!"
 				student["willpower"] -= curr["damage"]
 			else
-				p "code missed"
+				p "Code missed"
 			end
 		end
 	end
@@ -97,5 +97,5 @@ while student["willpower"] > 0
 end
 
 puts "You were defeated by the rigurous course material"
-puts "You defeated #{student["enemies_defeated"]}"
+puts "You defeated #{student["enemies_defeated"]} enemies"
 puts "Congrats!"
